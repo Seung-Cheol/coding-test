@@ -1,12 +1,12 @@
-package org.example.june06;
+package org.example.june07;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.AbstractExecutorService;
 
-public class Baekjoon9375 {
+/*
+성능 : 메모리  14076kb 속도  100ms
+ */
+public class Baekjoon11557 {
 
   public static void main(String[] args) throws Exception {
     BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -14,15 +14,23 @@ public class Baekjoon9375 {
     for(int i = 0; i<count; i++) {
       int tf = isNumber(bf.readLine());
       if(tf!=-1) {
-        Map<String, Integer> fabricMap = new HashMap<>();
+        int drink = 0;
+        String name = null;
         for(int a = 0; a<tf; a++) {
-          String temp = bf.readLine().split(" ")[1];
-          fabricMap.put(temp,fabricMap.getOrDefault(temp,0) +1);
+          String[] temp = bf.readLine().split(" ");
+          String tempName = temp[0];
+          int tempDrink = Integer.parseInt(temp[1]);
+          if(tempDrink > drink) {
+            drink = tempDrink;
+            name = tempName;
+          }
         }
-        System.out.println(fabricMap.values().stream().map((e)->e+1).reduce(1,(a,b)-> a*b) -1);
+        System.out.println(name);
       }
     }
+
   }
+
 
   private static int isNumber(String str) {
     try {
