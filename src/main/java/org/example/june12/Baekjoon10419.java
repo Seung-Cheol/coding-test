@@ -3,6 +3,10 @@ package org.example.june12;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+
+/*
+성능 : 메모리 14036kb 성능 124ms
+ */
 public class Baekjoon10419 {
 
   public static void main(String[] args) throws Exception {
